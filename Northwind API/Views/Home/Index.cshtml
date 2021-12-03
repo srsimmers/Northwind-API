@@ -1,0 +1,56 @@
+﻿
+@using Northwind_API.Models;
+@using System.ComponentModel.DataAnnotations;
+
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row"><p><h2>Category Name</h2></p></div>
+
+<div class="row">
+
+    <div class="col-md-12">
+        <div class="table- responsive">
+            <table class="table table-striped custom table mb-0">
+                <thead>
+                    <tr>
+                        
+
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Supplier</th>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Units in Stock</th>
+                        <th>Company Name</th>
+                    
+
+                </thead>
+                <tbody>
+
+                    @if (@Model != null)
+                    {
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.description</td>
+                                <td>@item.category_name</td>
+                                <td>@item.supplier_id</td>
+                                <td>@item.product_name</td>
+                                <td>@item.unit_price</td>
+                                <td>@item.units_in_stock</td>
+                                <td>@item.company_name</td>
+                            
+                            </tr>
+                        }
+                    }
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</div>
